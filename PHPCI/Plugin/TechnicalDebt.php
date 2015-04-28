@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -12,15 +12,17 @@ namespace PHPCI\Plugin;
 use PHPCI;
 use PHPCI\Builder;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
+use PHPCI\PluginZeroConfigInterface;
 
 /**
-* Technical Debt Plugin - Checks for existence of "TODO", "FIXME", etc.
-*
-* @author       James Inman <james@jamesinman.co.uk>
-* @package      PHPCI
-* @subpackage   Plugins
-*/
-class TechnicalDebt implements PHPCI\Plugin, PHPCI\ZeroConfigPlugin
+ * Technical Debt Plugin - Checks for existence of "TODO", "FIXME", etc.
+ *
+ * @author       James Inman <james@jamesinman.co.uk>
+ * @package      PHPCI
+ * @subpackage   Plugins
+ */
+class TechnicalDebt implements PluginInterface, PluginZeroConfigInterface
 {
     /**
      * @var \PHPCI\Builder

@@ -1,16 +1,31 @@
 <?php
+/**
+ * PHPCI - Continuous Integration for PHP
+ *
+ * @copyright    Copyright 2015, Block 8 Limited.
+ * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
+ * @link         https://www.phptesting.org/
+ */
+
 namespace PHPCI\Plugin;
 
 use Exception;
 use PHPCI\Builder;
 use PHPCI\Helper\Lang;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
 use Phar as PHPPhar;
 
 /**
  * Phar Plugin
+ *
+ * Plugin to generate php package using phar format.
+ *
+ * @author       Wanderson <wandersonwhcr@gmail.com>
+ * @package      PHPCI
+ * @subpackage   Plugins
  */
-class Phar implements \PHPCI\Plugin
+class Phar implements PluginInterface
 {
     /**
      * PHPCI

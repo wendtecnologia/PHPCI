@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -12,14 +12,18 @@ namespace PHPCI\Plugin;
 use PHPCI;
 use PHPCI\Builder;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
 
 /**
- * PHP Lint Plugin - Provides access to PHP lint functionality.
+ * PHP Lint Plugin
+ *
+ * Provides access to PHP lint functionality.
+ *
  * @author       Dan Cryer <dan@block8.co.uk>
  * @package      PHPCI
  * @subpackage   Plugins
  */
-class Lint implements PHPCI\Plugin
+class Lint implements PluginInterface
 {
     protected $directories;
     protected $recursive = true;

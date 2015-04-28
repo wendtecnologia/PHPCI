@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -13,15 +13,19 @@ use PDO;
 use PHPCI\Builder;
 use PHPCI\Helper\Lang;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
 
 /**
-* MySQL Plugin - Provides access to a MySQL database.
-* @author       Dan Cryer <dan@block8.co.uk>
-* @author       Steve Kamerman <stevekamerman@gmail.com>
-* @package      PHPCI
-* @subpackage   Plugins
-*/
-class Mysql implements \PHPCI\Plugin
+ * MySQL Plugin
+ *
+ * Provides access to a MySQL database.
+ *
+ * @author       Dan Cryer <dan@block8.co.uk>
+ * @author       Steve Kamerman <stevekamerman@gmail.com>
+ * @package      PHPCI
+ * @subpackage   Plugins
+ */
+class Mysql implements PluginInterface
 {
     /**
      * @var \PHPCI\Builder

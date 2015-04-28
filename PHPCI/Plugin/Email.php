@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -14,14 +14,18 @@ use PHPCI\Builder;
 use PHPCI\Helper\Lang;
 use PHPCI\Model\Build;
 use PHPCI\Helper\Email as EmailHelper;
+use PHPCI\PluginInterface;
 
 /**
-* Email Plugin - Provides simple email capability to PHPCI.
-* @author       Steve Brazier <meadsteve@gmail.com>
-* @package      PHPCI
-* @subpackage   Plugins
-*/
-class Email implements \PHPCI\Plugin
+ * Email Plugin
+ *
+ * Provides simple email capability to PHPCI.
+ *
+ * @author       Steve Brazier <meadsteve@gmail.com>
+ * @package      PHPCI
+ * @subpackage   Plugins
+ */
+class Email implements PluginInterface
 {
     /**
      * @var \PHPCI\Builder

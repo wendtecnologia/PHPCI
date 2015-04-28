@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -12,14 +12,16 @@ namespace PHPCI\Plugin;
 use PHPCI\Builder;
 use PHPCI\Helper\Lang;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
 
 /**
-* Environment variable plugin
-* @author       Steve Kamerman <stevekamerman@gmail.com>
-* @package      PHPCI
-* @subpackage   Plugins
-*/
-class Env implements \PHPCI\Plugin
+ * Environment variable plugin
+ *
+ * @author       Steve Kamerman <stevekamerman@gmail.com>
+ * @package      PHPCI
+ * @subpackage   Plugins
+ */
+class Env implements PluginInterface
 {
     protected $phpci;
     protected $build;
@@ -52,7 +54,7 @@ class Env implements \PHPCI\Plugin
                 // This allows the standard syntax: "FOO: bar"
                 $env_var = "$key=$value";
             }
-            
+
             if (!putenv($this->phpci->interpolate($env_var))) {
                 $success = false;
                 $this->phpci->logFailure(Lang::get('unable_to_set_env'));

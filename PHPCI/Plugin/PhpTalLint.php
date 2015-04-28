@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -12,14 +12,16 @@ namespace PHPCI\Plugin;
 use PHPCI;
 use PHPCI\Builder;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
 
 /**
  * PHPTAL Lint Plugin - Provides access to PHPTAL lint functionality.
+ *
  * @author       Stephen Ball <phpci@stephen.rebelinblue.com>
  * @package      PHPCI
  * @subpackage   Plugins
  */
-class PhpTalLint implements PHPCI\Plugin
+class PhpTalLint implements PluginInterface
 {
     protected $directories;
     protected $recursive = true;
@@ -222,7 +224,7 @@ class PhpTalLint implements PHPCI\Plugin
 
                 $row = str_replace('(use -i to include your custom modifier functions)', '', $row);
                 $message = str_replace($name . ': ', '', $row);
-                
+
                 $parts = explode(' (line ', $message);
 
                 $message = trim($parts[0]);

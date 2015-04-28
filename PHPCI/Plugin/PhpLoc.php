@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -12,14 +12,17 @@ namespace PHPCI\Plugin;
 use PHPCI;
 use PHPCI\Builder;
 use PHPCI\Model\Build;
+use PHPCI\PluginInterface;
+use PHPCI\PluginZeroConfigInterface;
 
 /**
  * PHP Loc - Allows PHP Copy / Lines of Code testing.
+ *
  * @author       Johan van der Heide <info@japaveh.nl>
  * @package      PHPCI
  * @subpackage   Plugins
  */
-class PhpLoc implements PHPCI\Plugin, PHPCI\ZeroConfigPlugin
+class PhpLoc implements PluginInterface, PluginZeroConfigInterface
 {
     /**
      * @var string

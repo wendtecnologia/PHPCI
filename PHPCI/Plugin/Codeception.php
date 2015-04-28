@@ -2,7 +2,7 @@
 /**
  * PHPCI - Continuous Integration for PHP
  *
- * @copyright    Copyright 2014, Block 8 Limited.
+ * @copyright    Copyright 2015, Block 8 Limited.
  * @license      https://github.com/Block8/PHPCI/blob/master/LICENSE.md
  * @link         https://www.phptesting.org/
  */
@@ -14,16 +14,21 @@ use PHPCI\Helper\Lang;
 use PHPCI\Model\Build;
 use PHPCI\Plugin\Util\TestResultParsers\Codeception as Parser;
 use Psr\Log\LogLevel;
+use PHPCI\PluginInterface;
+use PHPCI\PluginZeroConfigInterface;
 
 /**
- * Codeception Plugin - Enables full acceptance, unit, and functional testing.
+ * Codeception Plugin
+ *
+ * Enables full acceptance, unit, and functional testing.
+ *
  * @author       Don Gilbert <don@dongilbert.net>
  * @author       Igor Timoshenko <contact@igortimoshenko.com>
  * @author       Adam Cooper <adam@networkpie.co.uk>
  * @package      PHPCI
  * @subpackage   Plugins
  */
-class Codeception implements \PHPCI\Plugin, \PHPCI\ZeroConfigPlugin
+class Codeception implements PluginInterface, PluginZeroConfigInterface
 {
     /** @var string */
     protected $args = '';
