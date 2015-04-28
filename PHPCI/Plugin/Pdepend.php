@@ -54,6 +54,7 @@ class Pdepend implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -73,7 +74,7 @@ class Pdepend implements PluginInterface
     }
 
     /**
-     * Runs Pdepend with the given criteria as arguments
+     * {@inheritDocs}
      */
     public function execute()
     {

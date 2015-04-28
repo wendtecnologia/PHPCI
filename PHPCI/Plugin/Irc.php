@@ -65,8 +65,7 @@ class Irc implements PluginInterface
     }
 
     /**
-     * Run IRC plugin.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -97,8 +96,11 @@ class Irc implements PluginInterface
     }
 
     /**
+     * Execute a list of IRC commands.
+     *
      * @param resource $socket
      * @param array $commands
+     *
      * @return bool
      */
     private function executeIrcCommands($socket, array $commands)
@@ -124,9 +126,11 @@ class Irc implements PluginInterface
     }
 
     /**
+     * Execute a single IRC command.
      *
      * @param resource $socket
      * @param string $command
+     *
      * @return bool
      */
     private function executeIrcCommand($socket, $command)

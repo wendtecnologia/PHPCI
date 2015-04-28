@@ -51,11 +51,7 @@ class PhpDocblockChecker implements PluginInterface, PluginZeroConfigInterface
     protected $skipMethods = false;
 
     /**
-     * Check if this plugin can be executed.
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -68,6 +64,7 @@ class PhpDocblockChecker implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -102,7 +99,7 @@ class PhpDocblockChecker implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-     * Runs PHP Mess Detector in a specified directory.
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -160,6 +157,7 @@ class PhpDocblockChecker implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Report all of the errors we've encountered line-by-line.
+     *
      * @param $output
      */
     protected function reportErrors($output)

@@ -77,7 +77,7 @@ class Shell implements PluginInterface
     }
 
     /**
-     * Runs the shell command.
+     * {@inheritDocs}
      */
     public function execute()
     {

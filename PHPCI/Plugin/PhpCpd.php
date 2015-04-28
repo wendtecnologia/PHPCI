@@ -43,6 +43,7 @@ class PhpCpd implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -70,8 +71,8 @@ class PhpCpd implements PluginInterface
     }
 
     /**
-    * Runs PHP Copy/Paste Detector in a specified directory.
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $ignore = '';
@@ -112,8 +113,11 @@ class PhpCpd implements PluginInterface
 
     /**
      * Process the PHPCPD XML report.
+     *
      * @param $xmlString
+     *
      * @return array
+     *
      * @throws \Exception
      */
     protected function processReport($xmlString)

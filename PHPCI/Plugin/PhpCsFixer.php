@@ -63,8 +63,7 @@ class PhpCsFixer implements PluginInterface
     }
 
     /**
-     * Run PHP CS Fixer.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -83,6 +82,7 @@ class PhpCsFixer implements PluginInterface
 
     /**
      * Build an args string for PHPCS Fixer.
+     *
      * @param $options
      */
     public function buildArgs($options)
@@ -102,6 +102,5 @@ class PhpCsFixer implements PluginInterface
         if (isset($options['workingdir']) && $options['workingdir']) {
             $this->workingdir = $this->phpci->buildPath . $options['workingdir'];
         }
-
     }
 }

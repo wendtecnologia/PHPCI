@@ -53,11 +53,7 @@ class PhpUnit implements PluginInterface, PluginZeroConfigInterface
     protected $xmlConfigFile;
 
     /**
-     * Check if this plugin can be executed.
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -70,7 +66,9 @@ class PhpUnit implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Try and find the phpunit XML config file.
+     *
      * @param $buildPath
+     *
      * @return null|string
      */
     public static function findConfigFile($buildPath)
@@ -141,8 +139,8 @@ class PhpUnit implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-    * Runs PHP Unit tests in a specified directory, optionally using specified config file(s).
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         if (empty($this->xmlConfigFile) && empty($this->directory)) {
@@ -187,7 +185,9 @@ class PhpUnit implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Run the tests defined in a PHPUnit config file.
+     *
      * @param $configPath
+     *
      * @return bool|mixed
      */
     protected function runConfigFile($configPath)
@@ -215,7 +215,9 @@ class PhpUnit implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Run the PHPUnit tests in a specific directory or array of directories.
+     *
      * @param $directory
+     *
      * @return bool|mixed
      */
     protected function runDir($directory)
@@ -238,6 +240,7 @@ class PhpUnit implements PluginInterface, PluginZeroConfigInterface
     /**
      * @param $array
      * @param $callable
+     *
      * @return bool|mixed
      */
     protected function recurseArg($array, $callable)

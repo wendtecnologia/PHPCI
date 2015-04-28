@@ -57,7 +57,7 @@ class Behat implements PluginInterface
     }
 
     /**
-     * Runs Behat tests.
+     * {@inheritDocs}
      */
     public function execute()
     {

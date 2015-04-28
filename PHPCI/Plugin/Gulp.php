@@ -73,8 +73,8 @@ class Gulp implements PluginInterface
     }
 
     /**
-    * Executes gulp and runs a specified command (e.g. install / update)
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         // if npm does not work, we cannot use gulp, so we return false

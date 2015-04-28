@@ -24,12 +24,12 @@ use PHPCI\PluginInterface;
 class PhpSpec implements PluginInterface
 {
     /**
-     * @var \PHPCI\Builder
+     * @var Builder
      */
     protected $phpci;
 
     /**
-     * @var \PHPCI\Model\Build
+     * @var Build
      */
     protected $build;
 
@@ -40,6 +40,7 @@ class PhpSpec implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -52,8 +53,8 @@ class PhpSpec implements PluginInterface
     }
 
     /**
-    * Runs PHP Spec tests.
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $curdir = getcwd();
@@ -144,7 +145,6 @@ class PhpSpec implements PluginInterface
         }
 
         $this->build->storeMeta('phpspec', $data);
-
 
         return $success;
     }

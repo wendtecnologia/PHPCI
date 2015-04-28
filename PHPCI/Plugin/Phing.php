@@ -37,6 +37,7 @@ class Phing implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -46,9 +47,7 @@ class Phing implements PluginInterface
         $this->setPhpci($phpci);
         $this->build = $build;
 
-        /*
-         * Set working directory
-         */
+        // Set working directory
         if (isset($options['directory'])) {
             $directory = $phpci->buildPath . '/' . $options['directory'];
         } else {
@@ -57,9 +56,7 @@ class Phing implements PluginInterface
 
         $this->setDirectory($directory);
 
-        /*
-         * Sen name of a non default build file
-         */
+        // Set name of a non default build file
         if (isset($options['build_file'])) {
             $this->setBuildFile($options['build_file']);
         }
@@ -78,7 +75,7 @@ class Phing implements PluginInterface
     }
 
     /**
-     * Executes Phing and runs a specified targets
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -100,7 +97,7 @@ class Phing implements PluginInterface
     }
 
     /**
-     * @return \PHPCI\Builder
+     * @return Builder
      */
     public function getPhpci()
     {
@@ -108,7 +105,7 @@ class Phing implements PluginInterface
     }
 
     /**
-     * @param \PHPCI\Builder $phpci
+     * @param Builder $phpci
      *
      * @return $this
      */
@@ -145,6 +142,7 @@ class Phing implements PluginInterface
 
     /**
      * Converts an array of targets into a string.
+     *
      * @return string
      */
     private function targetsToString()
@@ -178,6 +176,7 @@ class Phing implements PluginInterface
      * @param mixed $buildFile
      *
      * @return $this
+     *
      * @throws \Exception
      */
     public function setBuildFile($buildFile)
@@ -191,6 +190,7 @@ class Phing implements PluginInterface
 
     /**
      * Get phing build file path.
+     *
      * @return string
      */
     public function getBuildFilePath()
@@ -211,10 +211,8 @@ class Phing implements PluginInterface
      */
     public function propertiesToString()
     {
-        /**
-         * fix the problem when execute phing out of the build dir
-         * @ticket 748
-         */
+        // Fix the problem when execute phing out of the build dir
+        // @ticket 748
         if (!isset($this->properties['project.basedir'])) {
             $this->properties['project.basedir'] = $this->getDirectory();
         }
@@ -254,6 +252,7 @@ class Phing implements PluginInterface
      * @param string $propertyFile
      *
      * @return $this
+     *
      * @throws \Exception
      */
     public function setPropertyFile($propertyFile)

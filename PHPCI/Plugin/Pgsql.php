@@ -77,9 +77,8 @@ class Pgsql implements PluginInterface
     }
 
     /**
-    * Connects to PgSQL and runs a specified set of queries.
-    * @return boolean
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         try {

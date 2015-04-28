@@ -29,6 +29,7 @@ class Env implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -41,8 +42,8 @@ class Env implements PluginInterface
     }
 
     /**
-    * Adds the specified environment variables to the builder environment
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $success = true;

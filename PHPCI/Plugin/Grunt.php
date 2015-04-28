@@ -73,8 +73,8 @@ class Grunt implements PluginInterface
     }
 
     /**
-    * Executes grunt and runs a specified command (e.g. install / update)
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         // if npm does not work, we cannot use grunt, so we return false

@@ -49,8 +49,8 @@ class CleanBuild implements PluginInterface
     }
 
     /**
-    * Executes Composer and runs a specified command (e.g. install / update)
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $cmd = 'rm -Rf "%s"';

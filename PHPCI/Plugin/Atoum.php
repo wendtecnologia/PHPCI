@@ -33,6 +33,7 @@ class Atoum implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -62,8 +63,7 @@ class Atoum implements PluginInterface
     }
 
     /**
-     * Run the Atoum plugin.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {

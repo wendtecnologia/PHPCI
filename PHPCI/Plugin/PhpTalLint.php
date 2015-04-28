@@ -29,12 +29,12 @@ class PhpTalLint implements PluginInterface
     protected $ignore;
 
     /**
-     * @var \PHPCI\Builder
+     * @var Builder
      */
     protected $phpci;
 
     /**
-     * @var \PHPCI\Model\Build
+     * @var Build
      */
     protected $build;
 
@@ -89,6 +89,7 @@ class PhpTalLint implements PluginInterface
 
     /**
      * Handle this plugin's options.
+     *
      * @param $options
      */
     protected function setOptions($options)
@@ -101,7 +102,7 @@ class PhpTalLint implements PluginInterface
     }
 
     /**
-     * Executes phptal lint
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -145,8 +146,10 @@ class PhpTalLint implements PluginInterface
 
     /**
      * Lint an item (file or directory) by calling the appropriate method.
+     *
      * @param $item
      * @param $itemPath
+     *
      * @return bool
      */
     protected function lintItem($item, $itemPath)
@@ -166,7 +169,9 @@ class PhpTalLint implements PluginInterface
 
     /**
      * Run phptal lint against a directory of files.
+     *
      * @param $path
+     *
      * @return bool
      */
     protected function lintDirectory($path)
@@ -195,7 +200,9 @@ class PhpTalLint implements PluginInterface
 
     /**
      * Run phptal lint against a specific file.
+     *
      * @param $path
+     *
      * @return bool
      */
     protected function lintFile($path)
@@ -246,6 +253,7 @@ class PhpTalLint implements PluginInterface
 
     /**
      * Process options and produce an arguments string for PHPTAL Lint.
+     *
      * @return array
      */
     protected function getFlags()

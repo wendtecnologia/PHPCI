@@ -29,6 +29,7 @@ class PackageBuild implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -44,8 +45,8 @@ class PackageBuild implements PluginInterface
     }
 
     /**
-    * Executes Composer and runs a specified command (e.g. install / update)
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $path = $this->phpci->buildPath;

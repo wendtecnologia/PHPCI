@@ -34,11 +34,7 @@ class Composer implements PluginInterface, PluginZeroConfigInterface
     protected $build;
 
     /**
-     * Check if this plugin can be executed.
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -53,6 +49,7 @@ class Composer implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -80,8 +77,8 @@ class Composer implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-    * Executes Composer and runs a specified command (e.g. install / update)
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $composerLocation = $this->phpci->findBinary(array('composer', 'composer.phar'));

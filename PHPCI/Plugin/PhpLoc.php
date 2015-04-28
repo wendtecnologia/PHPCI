@@ -28,17 +28,14 @@ class PhpLoc implements PluginInterface, PluginZeroConfigInterface
      * @var string
      */
     protected $directory;
+
     /**
      * @var \PHPCI\Builder
      */
     protected $phpci;
 
     /**
-     * Check if this plugin can be executed.
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -51,6 +48,7 @@ class PhpLoc implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -67,7 +65,7 @@ class PhpLoc implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-     * Runs PHP Copy/Paste Detector in a specified directory.
+     * {@inheritDocs}
      */
     public function execute()
     {

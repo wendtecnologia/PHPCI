@@ -62,8 +62,7 @@ class Sqlite implements PluginInterface
     }
 
     /**
-     * Connects to SQLite and runs a specified set of queries.
-     * @return boolean
+     * {@inheritDocs}
      */
     public function execute()
     {

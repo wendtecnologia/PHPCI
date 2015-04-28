@@ -19,7 +19,7 @@ use PHPCI\Model\Build;
 interface PluginZeroConfigInterface
 {
     /**
-     * Execute the plugin withput requiring configuration.
+     * Check if this plugin can be executed.
      *
      * @param  string  $stage   The current stage
      * @param  Builder $builder The plugin builder

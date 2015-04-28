@@ -126,6 +126,7 @@ class Phar implements PluginInterface
      * Directory Setter
      *
      * @param  string $directory Configuration Value
+     *
      * @return Phar   Fluent Interface
      */
     public function setDirectory($directory)
@@ -151,6 +152,7 @@ class Phar implements PluginInterface
      * Filename Setter
      *
      * @param  string $filename Configuration Value
+     *
      * @return Phar   Fluent Interface
      */
     public function setFilename($filename)
@@ -176,6 +178,7 @@ class Phar implements PluginInterface
      * Regular Expression Setter
      *
      * @param  string $regexp Configuration Value
+     *
      * @return Phar   Fluent Interface
      */
     public function setRegExp($regexp)
@@ -201,6 +204,7 @@ class Phar implements PluginInterface
      * Stub Filename Setter
      *
      * @param  string $stub Configuration Value
+     *
      * @return Phar   Fluent Interface
      */
     public function setStub($stub)
@@ -221,6 +225,7 @@ class Phar implements PluginInterface
 
     /**
      * Get stub content for the Phar file.
+     *
      * @return string
      */
     public function getStubContent()
@@ -234,8 +239,7 @@ class Phar implements PluginInterface
     }
 
     /**
-     * Run the phar plugin.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {

@@ -33,6 +33,7 @@ class CopyBuild implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -48,8 +49,8 @@ class CopyBuild implements PluginInterface
     }
 
     /**
-    * Copies files from the root of the build directory into the target folder
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $build = $this->phpci->buildPath;
@@ -74,6 +75,7 @@ class CopyBuild implements PluginInterface
 
     /**
      * Wipe the destination directory if it already exists.
+     *
      * @throws \Exception
      */
     protected function wipeExistingDirectory()

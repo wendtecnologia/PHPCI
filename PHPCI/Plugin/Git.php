@@ -29,6 +29,7 @@ class Git implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -41,8 +42,7 @@ class Git implements PluginInterface
     }
 
     /**
-     * Run the Git plugin.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -72,8 +72,10 @@ class Git implements PluginInterface
 
     /**
      * Determine which action to run, and run it.
+     *
      * @param $action
      * @param array $options
+     *
      * @return bool
      */
     protected function runAction($action, array $options = array())
@@ -98,6 +100,7 @@ class Git implements PluginInterface
 
     /**
      * Handle a merge action.
+     *
      * @param $options
      * @return bool
      */
@@ -112,6 +115,7 @@ class Git implements PluginInterface
 
     /**
      * Handle a tag action.
+     *
      * @param $options
      * @return bool
      */
@@ -134,6 +138,7 @@ class Git implements PluginInterface
 
     /**
      * Handle a pull action.
+     *
      * @param $options
      * @return bool
      */
@@ -155,6 +160,7 @@ class Git implements PluginInterface
 
     /**
      * Handle a push action.
+     *
      * @param $options
      * @return bool
      */

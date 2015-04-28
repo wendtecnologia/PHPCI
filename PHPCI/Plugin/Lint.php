@@ -64,7 +64,7 @@ class Lint implements PluginInterface
     }
 
     /**
-     * Executes parallel lint
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -86,9 +86,11 @@ class Lint implements PluginInterface
 
     /**
      * Lint an item (file or directory) by calling the appropriate method.
+     *
      * @param $php
      * @param $item
      * @param $itemPath
+     *
      * @return bool
      */
     protected function lintItem($php, $item, $itemPath)
@@ -106,8 +108,10 @@ class Lint implements PluginInterface
 
     /**
      * Run php -l against a directory of files.
+     *
      * @param $php
      * @param $path
+     *
      * @return bool
      */
     protected function lintDirectory($php, $path)
@@ -136,8 +140,10 @@ class Lint implements PluginInterface
 
     /**
      * Run php -l against a specific file.
+     *
      * @param $php
      * @param $path
+     *
      * @return bool
      */
     protected function lintFile($php, $path)

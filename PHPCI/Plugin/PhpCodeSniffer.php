@@ -78,11 +78,7 @@ class PhpCodeSniffer implements PluginInterface, PluginZeroConfigInterface
     protected $ignore;
 
     /**
-     * Check if this plugin can be executed.
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -134,6 +130,7 @@ class PhpCodeSniffer implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Handle this plugin's options.
+     *
      * @param $options
      */
     protected function setOptions($options)
@@ -146,8 +143,8 @@ class PhpCodeSniffer implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-    * Runs PHP Code Sniffer in a specified directory, to a specified standard.
-    */
+     * {@inheritDocs}
+      */
     public function execute()
     {
         list($ignore, $standard, $suffixes) = $this->getFlags();
@@ -190,6 +187,7 @@ class PhpCodeSniffer implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Process options and produce an arguments string for PHPCS.
+     *
      * @return array
      */
     protected function getFlags()
@@ -215,8 +213,11 @@ class PhpCodeSniffer implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Process the PHPCS output report.
+     *
      * @param $output
+     *
      * @return array
+     *
      * @throws \Exception
      */
     protected function processReport($output)

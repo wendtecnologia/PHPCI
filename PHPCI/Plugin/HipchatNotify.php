@@ -31,9 +31,11 @@ class HipchatNotify implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
+     *
      * @throws \Exception
      */
     public function __construct(Builder $phpci, Build $build, array $options = array())
@@ -72,8 +74,7 @@ class HipchatNotify implements PluginInterface
     }
 
     /**
-     * Run the HipChat plugin.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {

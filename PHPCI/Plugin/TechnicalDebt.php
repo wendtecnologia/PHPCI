@@ -67,12 +67,7 @@ class TechnicalDebt implements PluginInterface, PluginZeroConfigInterface
 
 
     /**
-     * Check if this plugin can be executed.
-     *
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -112,6 +107,7 @@ class TechnicalDebt implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Handle this plugin's options.
+     *
      * @param $options
      */
     protected function setOptions($options)
@@ -124,8 +120,8 @@ class TechnicalDebt implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-    * Runs the plugin
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $success = true;

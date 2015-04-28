@@ -95,9 +95,8 @@ class Mysql implements PluginInterface
     }
 
     /**
-    * Connects to MySQL and runs a specified set of queries.
-    * @return boolean
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         try {
@@ -124,7 +123,9 @@ class Mysql implements PluginInterface
 
     /**
      * @param string $query
+     *
      * @return boolean
+     *
      * @throws \Exception
      */
     protected function executeFile($query)
@@ -150,8 +151,10 @@ class Mysql implements PluginInterface
 
     /**
      * Builds the MySQL import command required to import/execute the specified file
+     *
      * @param string $import_file Path to file, relative to the build root
-     * @param string $database If specified, this database is selected before execution
+     * @param string $database    If specified, this database is selected before execution
+     *
      * @return string
      */
     protected function getImportCommand($import_file, $database = null)

@@ -59,11 +59,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
     protected $rules;
 
     /**
-     * Check if this plugin can be executed.
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -114,7 +110,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-     * Runs PHP Mess Detector in a specified directory.
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -135,6 +131,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Override a default setting.
+     *
      * @param $options
      * @param $key
      */
@@ -147,8 +144,11 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Process PHPMD's XML output report.
+     *
      * @param $xmlString
+     *
      * @return array
+     *
      * @throws \Exception
      */
     protected function processReport($xmlString)
@@ -189,6 +189,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Try and process the rules parameter from phpci.yml.
+     *
      * @return bool
      */
     protected function tryAndProcessRules()
@@ -209,6 +210,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Execute PHP Mess Detector.
+     *
      * @param $binaryPath
      */
     protected function executePhpMd($binaryPath)
@@ -245,6 +247,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Get the path PHPMD should be run against.
+     *
      * @return string
      */
     protected function getTargetPath()
@@ -261,6 +264,7 @@ class PhpMessDetector implements PluginInterface, PluginZeroConfigInterface
      * Returns a boolean indicating if the error count can be considered a success.
      *
      * @param int $errorCount
+     *
      * @return bool
      */
     protected function wasLastExecSuccessful($errorCount)

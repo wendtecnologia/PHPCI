@@ -36,6 +36,7 @@ class Wipe implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -49,8 +50,8 @@ class Wipe implements PluginInterface
     }
 
     /**
-    * Wipes a directory's contents
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $build = $this->phpci->buildPath;

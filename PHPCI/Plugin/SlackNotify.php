@@ -72,8 +72,7 @@ class SlackNotify implements PluginInterface
     }
 
     /**
-     * Run the Slack plugin.
-     * @return bool
+     * {@inheritDocs}
      */
     public function execute()
     {

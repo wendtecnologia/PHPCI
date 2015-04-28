@@ -50,10 +50,7 @@ class Codeception implements PluginInterface, PluginZeroConfigInterface
     protected $path;
 
     /**
-     * @param $stage
-     * @param Builder $builder
-     * @param Build $build
-     * @return bool
+     * {@inheritDocs}
      */
     public static function canExecute($stage, Builder $builder, Build $build)
     {
@@ -66,7 +63,9 @@ class Codeception implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Try and find the codeception YML config file.
+     *
      * @param $buildPath
+     *
      * @return null|string
      */
     public static function findConfigFile($buildPath)
@@ -84,6 +83,7 @@ class Codeception implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -109,7 +109,7 @@ class Codeception implements PluginInterface, PluginZeroConfigInterface
     }
 
     /**
-     * Runs Codeception tests, optionally using specified config file(s).
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -128,8 +128,11 @@ class Codeception implements PluginInterface, PluginZeroConfigInterface
 
     /**
      * Run tests from a Codeception config file.
+     *
      * @param $configPath
+     *
      * @return bool|mixed
+     *
      * @throws \Exception
      */
     protected function runConfigFile($configPath)

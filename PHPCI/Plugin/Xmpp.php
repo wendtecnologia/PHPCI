@@ -131,6 +131,8 @@ class XMPP implements PluginInterface
 
     /**
      * Find config file for sendxmpp binary (default is .sendxmpprc)
+     *
+     * @return  bool|null
      */
     public function findConfigFile()
     {
@@ -146,8 +148,8 @@ class XMPP implements PluginInterface
     }
 
     /**
-    * Send notification message.
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         $sendxmpp = $this->phpci->findBinary('sendxmpp');
@@ -201,6 +203,7 @@ class XMPP implements PluginInterface
 
     /**
      * @param $message_file
+     *
      * @return int
      */
     protected function buildMessage($message_file)

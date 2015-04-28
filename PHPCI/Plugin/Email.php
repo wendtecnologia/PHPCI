@@ -44,6 +44,7 @@ class Email implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param \Swift_Mailer $mailer
@@ -60,7 +61,7 @@ class Email implements PluginInterface
     }
 
     /**
-     * Send a notification mail.
+     * {@inheritDocs}
      */
     public function execute()
     {
@@ -95,11 +96,14 @@ class Email implements PluginInterface
     }
 
     /**
-     * @param string $toAddress Single address to send to
-     * @param string[] $ccList
-     * @param string $subject Email subject
-     * @param string $body Email body
-     * @return array                      Array of failed addresses
+     * Send a mail using the specified information.
+     *
+     * @param string    $toAddress  Single address to send to
+     * @param string[]  $ccList     List of user to CC
+     * @param string    $subject    Email subject
+     * @param string    $body       Email body
+     *
+     * @return array                Array of failed addresses
      */
     public function sendEmail($toAddress, $ccList, $subject, $body)
     {
@@ -122,14 +126,11 @@ class Email implements PluginInterface
     /**
      * Send an email to a list of specified subjects.
      *
-     * @param array $toAddresses
-     *   List of destinatary of message.
-     * @param string $subject
-     *   Mail subject
-     * @param string $body
-     *   Mail body
+     * @param array  $toAddresses List of destinatary of message.
+     * @param string $subject     Mail subject
+     * @param string $body        Mail body
      *
-     * @return int number of failed messages
+     * @return int                number of failed messages
      */
     public function sendSeparateEmails(array $toAddresses, $subject, $body)
     {
@@ -146,6 +147,7 @@ class Email implements PluginInterface
 
     /**
      * Get the list of email addresses to send to.
+     *
      * @return array
      */
     protected function getEmailAddresses()
@@ -172,6 +174,7 @@ class Email implements PluginInterface
 
     /**
      * Get the list of email addresses to CC.
+     *
      * @return array
      */
     protected function getCcAddresses()

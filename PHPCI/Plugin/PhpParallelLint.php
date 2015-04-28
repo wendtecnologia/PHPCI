@@ -72,8 +72,8 @@ class PhpParallelLint implements PluginInterface
     }
 
     /**
-    * Executes parallel lint
-    */
+     * {@inheritDocs}
+     */
     public function execute()
     {
         list($ignore) = $this->getFlags();
@@ -99,6 +99,7 @@ class PhpParallelLint implements PluginInterface
 
     /**
      * Produce an argument string for PHP Parallel Lint.
+     *
      * @return array
      */
     protected function getFlags()

@@ -34,6 +34,7 @@ class Campfire implements PluginInterface
 
     /**
      * Set up the plugin, configure options, etc.
+     *
      * @param Builder $phpci
      * @param Build $build
      * @param array $options
@@ -61,8 +62,7 @@ class Campfire implements PluginInterface
     }
 
     /**
-     * Run the Campfire plugin.
-     * @return bool|mixed
+     * {@inheritDocs}
      */
     public function execute()
     {
